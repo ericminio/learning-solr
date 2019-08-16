@@ -1,0 +1,15 @@
+{
+  "name": "learning-solr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1.solr.ready.spec.js",
+  "scripts": {
+    "test": "mocha *.spec.js --timeout 0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}

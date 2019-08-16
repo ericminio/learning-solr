@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "10.15.1"
+services:
+  - docker
+before_install:
+  - $TRAVIS_BUILD_DIR/support/solr/docker_pull_solr.sh
+  - $TRAVIS_BUILD_DIR/support/solr/start_solr_as_daemon.sh
+  - sleep 15
+install:
+  - yarn
+before_script:
+  - echo $TRAVIS_BUILD_DIR
+  - $TRAVIS_BUILD_DIR/support/solr/create_hello_world_core.sh
+  - export SOLR_URL=http://localhost:8983
+script:
+  - npm test
